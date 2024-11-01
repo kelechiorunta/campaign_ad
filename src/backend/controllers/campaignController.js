@@ -10,6 +10,7 @@ exports.addCampaign = async (req, res) => {
   console.log("Received imageBase64:", imageBase64);
 
   try {
+    //Save to MongoDB with the Mongoose model save API
     const newCampaign = new Campaign({ name, from, to, totalBudget, dailyBudget, imageBase64 });
     await newCampaign.save();
     res.status(201).json({ message: "Campaign added successfully", campaign: newCampaign });
@@ -23,6 +24,7 @@ exports.addCampaign = async (req, res) => {
 // List all campaigns
 exports.getCampaigns = async (req, res) => {
   try {
+    //Fetch the campaigns from the MongoDB database with the Mongoose model find API.
     const allCampaigns = await Campaign.find();
     res.status(200).json({ campaigns: allCampaigns });
   } catch (error) {

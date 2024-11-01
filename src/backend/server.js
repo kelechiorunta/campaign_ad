@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const path = require('path')
 const campaignRoutes = require('./routes/campaignRoutes');
 const connectDB = require('./db');
-require ('dotenv').config();
+require('dotenv').config();
 
 const app = express();
 
@@ -13,7 +13,7 @@ connectDB();
 
 const allowedOrigins = [
     
-    'https://add-campaign.vercel.app',  // Production frontend origin
+    'https://add-campaign.vercel.app', // Production frontend origin
     // 'http://localhost:5000', 
     // 'http://localhost:3000',// Development frontend origin
      // Development frontend origin
@@ -35,7 +35,6 @@ const allowedOrigins = [
   };
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
-// app.use('/uploads', express.static('../../build/uploads'));
 app.use('/api', campaignRoutes);
 app.enable('trust proxy')
 app.use(express.static(path.resolve(__dirname, '../../build')));
