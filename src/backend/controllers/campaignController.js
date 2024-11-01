@@ -1,5 +1,4 @@
 // controllers/campaignController.js
-// controllers/campaignController.js
 const { Campaign } = require('../models/campaignModel');
 
 // Add a new campaign
@@ -7,7 +6,7 @@ const { Campaign } = require('../models/campaignModel');
 exports.addCampaign = async (req, res) => {
   const { name, from, to, totalBudget, dailyBudget, imageBase64 } = req.body; // `imageBase64` should be part of the request body
 
-  // Make sure you see `imageBase64` here
+  // Console the image string
   console.log("Received imageBase64:", imageBase64);
 
   try {

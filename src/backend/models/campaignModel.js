@@ -1,8 +1,4 @@
 // models/campaignModel.js
-// let campaigns = [];
-
-// module.exports = campaigns;
-// models/campaignModel.js
 const mongoose = require('mongoose');
 
 const CampaignSchema = new mongoose.Schema({
